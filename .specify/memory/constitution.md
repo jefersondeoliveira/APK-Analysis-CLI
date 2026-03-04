@@ -1,50 +1,61 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report (2026-03-03)
+- Version change: 0.0.0 → 1.0.0
+- Modified principles: All template placeholders replaced
+- Added sections: Platform Independence, Dependency Discipline
+- Removed sections: None
+- Templates requiring updates: plan-template.md (✅), spec-template.md (✅), tasks-template.md (✅)
+- Follow-up TODOs: TODO(RATIFICATION_DATE): Original ratification date required
+-->
+
+# APK Analyzer CLI Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Clean Architecture
+The project MUST follow Clean Architecture principles. All layers must be clearly separated, with business logic isolated from frameworks and delivery mechanisms.
+Rationale: Ensures maintainability, testability, and adaptability to future changes.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Modular & Extensible CLI
+The CLI MUST be modular and extensible. New commands and features must be addable without major refactoring.
+Rationale: Supports growth and customizability for diverse user needs.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Business Rule Independence
+All business rules MUST be independent from the CLI framework. No business logic may depend on CLI-specific code or libraries.
+Rationale: Enables reuse, easier testing, and framework migration.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Testability with Unit Tests
+The tool MUST support testability with unit tests. All business logic and CLI modules must have independently runnable unit tests.
+Rationale: Guarantees reliability and supports continuous integration.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Output Formats
+Output MUST support both human-readable and JSON formats. All CLI commands must provide both formats via flags or configuration.
+Rationale: Facilitates automation, integration, and user accessibility.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Platform Independence
+The project MUST be platform-independent (Windows, Mac, Linux). No code may assume a specific OS unless justified and documented.
+Rationale: Maximizes user reach and reduces support burden.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### VII. Dependency Discipline
+Dependencies MUST be minimal and well justified. Every external package must have a documented rationale for inclusion.
+Rationale: Reduces attack surface, simplifies maintenance, and improves portability.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Additional Constraints
+- All code and documentation must be in English.
+- Licensing must be OSI-approved and clearly stated in the repository.
+- Security best practices must be followed for handling user input and file operations.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+- All changes require code review by at least one other contributor.
+- Unit tests must pass before merging.
+- Feature branches must be named using the format `[###-feature-name]`.
+- All new features require a specification and implementation plan.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+- This constitution supersedes all other project practices.
+- Amendments require documentation, approval, and a migration plan.
+- All PRs/reviews must verify compliance with these principles.
+- Constitution versioning follows semantic versioning: MAJOR for principle changes, MINOR for additions, PATCH for clarifications.
+- Use runtime guidance files for development best practices.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE) | **Last Amended**: 2026-03-03
