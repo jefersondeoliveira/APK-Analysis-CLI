@@ -1,0 +1,7 @@
+.venv/
+*.apk
+.vscode/
+__pycache__/
+*.pyc
+*.log
+.env*
