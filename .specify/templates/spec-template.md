@@ -113,3 +113,13 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+
+## Constitution Check (mandatory)
+
+All specs MUST include a short "Constitution Check" section that documents how the feature aligns with the project constitution (`.specify/memory/constitution.md`). At minimum state:
+
+- Which constitutional principles the feature touches (e.g., Clean Architecture, Testability, Outputs).
+- Any deviations from the constitution and the justification and mitigation.
+- Required external tools (e.g., `aapt2`) and how they will be configured or abstracted.
+
+Missing this section will block merging until addressed.

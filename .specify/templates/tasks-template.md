@@ -184,6 +184,17 @@ Examples of foundational tasks (adjust based on your project):
 - Core implementation before integration
 - Story complete before moving to next priority
 
+## Constitution Check (tasks)
+
+Each generated `tasks.md` MUST include a short checklist that verifies the work items implement the applicable constitutional principles. At minimum:
+
+- Items implementing domain logic are isolated from CLI/framework changes.
+- Tasks include unit test work items for business logic.
+- Tasks referencing external tools include steps to configure/abstract them.
+- Tasks that introduce dependencies include a short rationale linked to change requests.
+
+Add a `T-CHECK` task at the end of each Phase that verifies constitution compliance before merging.
+
 ### Parallel Opportunities
 
 - All Setup tasks marked [P] can run in parallel

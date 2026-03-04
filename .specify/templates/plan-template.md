@@ -30,8 +30,21 @@
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+## Constitution Check
 
-[Gates determined based on constitution file]
+*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+
+Verify the plan complies with the project's constitution (.specify/memory/constitution.md). At minimum confirm:
+
+- Clean Architecture: domain, application, and infrastructure separation is preserved.
+- Business rules are independent of CLI/framework code.
+- Parsing logic is behind interfaces and injectable into the domain.
+- Testability: unit tests planned for business logic; integration tests separated and labeled.
+- Outputs: human-readable and JSON formats supported by planned commands.
+- Cross-platform considerations and OS abstractions are documented.
+- Dependency rationale: external dependency list includes short justifications.
+
+If any gate is violated, document the violation and include a justification in the "Complexity Tracking" section.
 
 ## Project Structure
 
