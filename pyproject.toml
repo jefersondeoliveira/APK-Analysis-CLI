@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apk_analyzer"
+version = "0.1.0"
+description = "CLI to extract basic metadata from Android APK files"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "typer>=0.9",
+  "androguard>=4.1.2"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "mypy", "coverage"]
+
+[tool.ruff]
+line-length = 88

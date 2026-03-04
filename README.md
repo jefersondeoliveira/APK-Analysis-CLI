@@ -1,3 +1,13 @@
+# APK Analyzer
+
+Small CLI to extract basic metadata from an Android APK file: package name, version name, version code, minSdk, targetSdk.
+
+Usage (after installing dependencies):
+
+```bash
+python -m apk_analyzer.cli.main path/to/app.apk
+python -m apk_analyzer.cli.main --json path/to/app.apk
+```
 # APK Analyzer — Spec-Driven Development
 
 This repository uses Spec-Driven Development. All features must originate from a written specification before implementation.
