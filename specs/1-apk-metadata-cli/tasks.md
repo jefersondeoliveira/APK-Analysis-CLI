@@ -107,7 +107,10 @@ Independent Test: Provide a plain-text file, verify exit `4` and stderr message.
 - [ ] T029 [P] Add CI workflow `/.github/workflows/ci.yml` to run lint, type-check, and tests
 - [ ] T030 [P] Add console entrypoint packaging in `pyproject.toml` (`[project.scripts]` or `tool.poetry.scripts`) so users can install `apk-analyzer` CLI
 - [ ] T031 [P] Update `README.md` and `specs/1-apk-metadata-cli/quickstart.md` with installation and usage examples
-- [ ] T032 [ ] T-CHECK Final: Verify constitution compliance (domain isolation, tests present, contracts implemented) before merge (files: see foundation T-CHECK and new artifacts)
+ - [ ] T032 [P] Add a lightweight performance integration test: `tests/integration/test_performance_runtime.py` which measures parse runtime for a small sample APK and records runtime for CI (validate target <5s as informational check)
+ - [ ] T033 [P] Add integration sample data handling: either add a tiny, permissively-licensed sample APK to `tests/integration/samples/` or implement a CI step to download curated test data and validate license; document approach in `docs/TEST_DATA.md`
+ - [ ] T034 [P] Add dependency rationale documentation: include short rationale entries for each runtime dependency in `docs/DEPENDENCIES.md` and refer from `pyproject.toml` (T002)
+ - [ ] T035 [ ] T-CHECK Final: Verify constitution compliance (domain isolation, tests present, contracts implemented) before merge (files: see foundation T-CHECK and new artifacts)
 
 ---
 

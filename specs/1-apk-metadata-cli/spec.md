@@ -105,8 +105,16 @@ Human-readable:
 JSON:
 
     $ apk-analyzer --json path/to/app.apk
-    {"packageName":"com.example.app","versionName":"1.2.3","versionCode":"123","minSdk":21,"targetSdk":30}
+   {"packageName":"com.example.app","versionName":"1.2.3","versionCode":123,"minSdk":21,"targetSdk":30}
 
 **Notes**
 
 - Implementation details (language/tooling) are intentionally omitted from this spec. The focus is on expected behavior, inputs, outputs, error handling, and testable acceptance criteria.
+
+**Notes on `versionCode` representation**
+
+- Canonical representation: `versionCode` SHOULD be emitted as an integer in the CLI JSON output when present. Implementations may accept a string form when parsing manifests, but must convert to an integer for JSON output when possible; if conversion is impossible, return `null`.
+
+**Clarification on exit code `1`**
+
+- Use exit code `1` for unexpected internal failures (unhandled exceptions or library errors not categorized as user-facing input errors). Known user-facing conditions must use `2`, `3`, or `4` as documented; ensure `1` is reserved for internal/unexpected errors and that stderr contains a concise message when it occurs.

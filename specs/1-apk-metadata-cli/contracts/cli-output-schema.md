@@ -9,7 +9,7 @@ This schema defines the JSON object emitted by the CLI when `--json` is used.
   "properties": {
     "packageName": { "type": "string" },
     "versionName": { "type": ["string", "null"] },
-    "versionCode": { "type": ["integer", "string", "null"] },
+    "versionCode": { "type": ["integer", "null"] },
     "minSdk": { "type": ["integer", "null"] },
     "targetSdk": { "type": ["integer", "null"] }
   },
@@ -19,4 +19,5 @@ This schema defines the JSON object emitted by the CLI when `--json` is used.
 ```
 
 Notes:
-- `versionCode` is allowed as string to be tolerant with some manifests that encode numeric codes as strings; the application should prefer integer conversion when possible.
+Notes:
+- `versionCode` MUST be an integer or `null` in the CLI JSON output. Implementations may accept string-encoded numeric values when parsing, but they should convert them to integers for the emitted JSON when possible.
